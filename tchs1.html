@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  </title></title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #dfe6e9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+    }
+
+    .remote {
+      background: #2d2d2d;
+      padding: 30px 20px;
+      border-radius: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 160px;
+    }
+
+    .btn {
+      width: 100%;
+      height: 45px;
+      background: #444;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #00a8ff;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+      background: #0097e6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="remote">
+    <button class="btn" onclick="playSound(1)">انتباه</button>
+    <button class="btn" onclick="playSound(2)">تجمع</button>
+    <button class="btn" onclick="playSound(3)">تفرق</button>
+    <button class="btn" onclick="playSound(4)">خطر</button>
+    <button class="btn" onclick="playSound(5)">طلب الناجده</button>
+    <button class="btn" onclick="playSound(6)">نداء العرفه</button>
+    <button class="btn" onclick="playSound(7)">نداء القاده</button>
+
+  </div>
+
+  <script>
+    function playSound(id) {
+      let path = "";
+
+      if (id === 1) path = "انتباه.m4a";   
+      else if (id === 2) path = "تجموع.m4a";
+      else if (id === 3) path = "تفرق.m4a";
+      else if (id === 4) path = "خطر.m4a";
+      else if (id === 5) path = "طلب الناجده.m4a";
+      else if (id === 6) path = "نداء العرفه.m4a";
+      else if (id === 7) path = "نداء القاده.m4a";
+
+      const audio = new Audio(path);
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
